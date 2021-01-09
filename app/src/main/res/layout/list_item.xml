@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textAllCaps="true"
-        android:textColor="#ffff"
+        android:textColor="@color/light_yellow"
         android:padding="5dp"
         android:textAlignment="viewEnd"/>
 
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textAllCaps="true"
-        android:textColor="#ffff"
+        android:textColor="@color/light_blue"
         android:padding="5dp"
         android:textAlignment="viewEnd"/>
 
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textAllCaps="true"
-        android:textColor="#ffff"
+        android:textColor="@color/light_green"
         android:padding="5dp"
         android:textAlignment="viewEnd"/>
 
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textAllCaps="true"
-        android:textColor="#ffff"
+        android:textColor="@color/light_red"
         android:padding="5dp"
         android:textAlignment="viewEnd"/>
 
