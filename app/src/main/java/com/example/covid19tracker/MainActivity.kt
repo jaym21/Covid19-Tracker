@@ -2,6 +2,7 @@ package com.example.covid19tracker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
@@ -17,11 +18,16 @@ private const val BASE_URL = "https://api.covid19india.org"
     private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var allStatesData: List<CovidData>
+
+    lateinit var stateListAdapter: StateListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //setting ListView
+        lvStatesCases.addHeaderView(LayoutInflater.from(this).inflate(R.layout.list_header, lvStatesCases, false))
+
 
         //create a instance of gson which we will need to create instance of retrofit
         val gson = GsonBuilder().create()
@@ -37,7 +43,8 @@ class MainActivity : AppCompatActivity() {
             if (response.isSuccessful) {
                 val data = response.body()
                 launch(Dispatchers.Main) {
-                    bindCombinedData(data?.statewise?.get(0))
+                    setTotalStatesData(data?.statewise?.get(0))
+                    setStateWiseData(data?.statewise?.subList(1,data.statewise.size))
                 }
 
             }
@@ -45,12 +52,17 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    //to set the last updated time from api
-    private fun bindCombinedData(data: StatewiseItem?) {
-        val lastUpdatedTime = data?.lastupdatedtime
-        val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
-        //this will update the last updated text view
-        tvLastUpdated.text = "Last Updated\n ${getTimeAgo(simpleDateFormat.parse(lastUpdatedTime))}"
+    private fun setStateWiseData(subList: List<StatewiseItem>?) {
+        stateListAdapter = StateListAdapter(subList)
+        lvStatesCases.adapter = stateListAdapter
+    }
+
+    //setting the data from api to views
+    private fun setTotalStatesData(data: StatewiseItem?) {
+        tvConfirmed.text = data?.confirmed
+        tvActive.text = data?.active
+        tvRecovered.text = data?.recovered
+        tvDeath.text = data?.deaths
     }
 
 

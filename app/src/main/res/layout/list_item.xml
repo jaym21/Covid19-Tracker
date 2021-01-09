@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvStateName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:textAllCaps="true"
+        android:textColor="#ffff"
+        android:textStyle="bold"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/tvConfirmedNo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAllCaps="true"
+        android:textColor="#ffff"
+        android:padding="5dp"
+        android:textAlignment="viewEnd"/>
+
+    <TextView
+        android:id="@+id/tvActiveNo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAllCaps="true"
+        android:textColor="#ffff"
+        android:padding="5dp"
+        android:textAlignment="viewEnd"/>
+
+    <TextView
+        android:id="@+id/tvRecoveredNo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAllCaps="true"
+        android:textColor="#ffff"
+        android:padding="5dp"
+        android:textAlignment="viewEnd"/>
+
+    <TextView
+        android:id="@+id/tvDeathNo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAllCaps="true"
+        android:textColor="#ffff"
+        android:padding="5dp"
+        android:textAlignment="viewEnd"/>
+
+</LinearLayout>
