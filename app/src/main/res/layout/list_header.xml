@@ -10,18 +10,19 @@
         android:text="STATE/UT"
         android:textAllCaps="true"
         android:textStyle="bold"
-        android:padding="8dp"
-        android:textColor="#ffff"/>
+        android:textColor="#ffff"
+        android:paddingBottom="10dp"/>
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Cnfmd"
+        android:text="Cnfm"
         android:textAllCaps="true"
         android:textStyle="bold"
-        android:padding="8dp"
-        android:textColor="@color/dark_yellow"/>
+        android:paddingBottom="10dp"
+        android:textColor="@color/dark_yellow"
+        android:textAlignment="viewEnd"/>
 
     <TextView
         android:layout_width="0dp"
@@ -30,8 +31,9 @@
         android:text="Active"
         android:textAllCaps="true"
         android:textStyle="bold"
-        android:padding="8dp"
-        android:textColor="@color/dark_blue"/>
+        android:paddingBottom="10dp"
+        android:textColor="@color/dark_blue"
+        android:textAlignment="viewEnd"/>
 
     <TextView
         android:layout_width="0dp"
@@ -40,8 +42,9 @@
         android:text="Recvd"
         android:textAllCaps="true"
         android:textStyle="bold"
-        android:padding="8dp"
-        android:textColor="@color/dark_green"/>
+        android:paddingBottom="10dp"
+        android:textColor="@color/dark_green"
+        android:textAlignment="viewEnd"/>
 
     <TextView
         android:layout_width="0dp"
@@ -50,7 +53,8 @@
         android:text="Death"
         android:textAllCaps="true"
         android:textStyle="bold"
-        android:padding="8dp"
-        android:textColor="@color/dark_red"/>
+        android:paddingBottom="10dp"
+        android:textColor="@color/dark_red"
+        android:textAlignment="viewEnd"/>
 
 </LinearLayout>

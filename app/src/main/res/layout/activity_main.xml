@@ -8,11 +8,23 @@
     android:background="#000"
     android:paddingTop="20dp">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#121212"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
     <LinearLayout
         android:id="@+id/llTotalCases"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="15dp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="20dp">
 
@@ -29,7 +41,7 @@
                 android:text="Confirmed"
                 android:textAllCaps="true"
                 android:textColor="@color/dark_yellow"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -45,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/dark_yellow"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 tools:text="12345" />
         </LinearLayout>
@@ -63,7 +75,7 @@
                 android:text="Active"
                 android:textAllCaps="true"
                 android:textColor="@color/dark_blue"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -79,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/dark_blue"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 tools:text="12345" />
         </LinearLayout>
@@ -97,7 +109,7 @@
                 android:text="Recovered"
                 android:textAllCaps="true"
                 android:textColor="@color/dark_green"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -113,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/dark_green"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 tools:text="12345" />
 
@@ -129,10 +141,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Death"
+                android:text="Deaths"
                 android:textAllCaps="true"
                 android:textColor="@color/dark_red"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -148,19 +160,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/dark_red"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 tools:text="12345" />
         </LinearLayout>
 
     </LinearLayout>
 
+    </androidx.cardview.widget.CardView>
+
     <ListView
         android:id="@+id/lvStatesCases"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/llTotalCases"
-        android:divider="#ffff"
-        android:dividerHeight="1dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:divider="#E5E7E9"
+        android:dividerHeight="0.5dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
