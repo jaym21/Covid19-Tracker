@@ -59,6 +59,13 @@ class MainActivity : AppCompatActivity() {
 
     //setting the data from api to views
     private fun setTotalStatesData(data: StatewiseItem?) {
+
+        val lastUpdatedTime = data?.lastupdatedtime
+        val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+        tvLastUpdated.text = "Last Updated\n ${getTimeAgo(
+                simpleDateFormat.parse(lastUpdatedTime)
+        )}"
+
         tvConfirmed.text = data?.confirmed
         tvActive.text = data?.active
         tvRecovered.text = data?.recovered
