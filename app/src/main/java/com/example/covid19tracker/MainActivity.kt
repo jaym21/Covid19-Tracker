@@ -1,8 +1,10 @@
 package com.example.covid19tracker
 
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +16,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-private const val BASE_URL = "https://api.covid19india.org"
+    private const val BASE_URL = "https://api.covid19india.org"
     private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +30,15 @@ class MainActivity : AppCompatActivity() {
         //setting ListView
         lvStatesCases.addHeaderView(LayoutInflater.from(this).inflate(R.layout.list_header, lvStatesCases, false))
 
+        getResults()
 
+        btnRefresh.setOnClickListener {
+            getResults()
+        }
+    }
+
+    //making instance of retrofit can connecting with api to get data
+    private fun getResults() {
         //create a instance of gson which we will need to create instance of retrofit
         val gson = GsonBuilder().create()
         val retrofit = Retrofit.Builder()
@@ -49,7 +59,6 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
-
     }
 
     private fun setStateWiseData(subList: List<StatewiseItem>?) {
